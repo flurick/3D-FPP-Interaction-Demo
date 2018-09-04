@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://misc/instructions.png" type="Texture" id=2]
@@ -103,6 +103,7 @@ _sections_unfolded = [ "Ambient Light", "Auto Exposure", "DOF Far Blur", "SSAO" 
 
 [sub_resource type="CubeMesh" id=2]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -269,6 +270,7 @@ _sections_unfolded = [ "Albedo", "UV1" ]
 
 [sub_resource type="CubeMesh" id=6]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -331,6 +333,7 @@ _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness", "UV1" ]
 
 [sub_resource type="CubeMesh" id=8]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -393,6 +396,7 @@ _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness" ]
 
 [sub_resource type="PlaneMesh" id=10]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
@@ -451,6 +455,7 @@ _sections_unfolded = [ "Albedo", "Roughness" ]
 
 [sub_resource type="CubeMesh" id=12]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -584,8 +589,13 @@ _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness", "UV1" ]
 
 data = PoolVector3Array( -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, 14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, -7.7852, 5.7617, 14.7031, -8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, -5.2773, -14.7031, 7.7852, 5.7617, 14.7031, 7.7852, -5.2773, 14.7031, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, 5.7617, -14.7031, -7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, -14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, -14.7031 )
 
+[sub_resource type="BoxShape" id=32]
+
+extents = Vector3( 4.58274, 8.16975, 16.0288 )
+
 [sub_resource type="SphereMesh" id=20]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 1.0
 height = 2.0
 radial_segments = 12
@@ -1026,11 +1036,11 @@ distance_fade_enable = false
 
 extents = Vector3( 0.483239, 0.695562, 0.491112 )
 
-[node name="Room_01" type="Node" index="0"]
+[node name="Room_01" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.0959454, 4.7763 )
+transform = Transform( 0.743642, 0, 0.668578, 0, 1, 0, -0.668578, 0, 0.743642, 2, -0.0959454, 1.31089 )
 
 [node name="world" type="Node" parent="." index="1"]
 
@@ -1042,23 +1052,26 @@ environment = SubResource( 1 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="world" index="1"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0118, 0 )
 layers = 1
 update_mode = 0
-intensity = 1.0
+intensity = 0.1
 max_distance = 0.0
-extents = Vector3( 24.0949, 8.9894, 27.2268 )
+extents = Vector3( 6.73724, 4.92159, 11.5665 )
 origin_offset = Vector3( 0, 0, 0 )
 box_projection = false
 enable_shadows = false
 cull_mask = 1048575
-interior_enable = false
-interior_ambient_color = Color( 0, 0, 0, 1 )
-interior_ambient_energy = 1.0
+interior_enable = true
+interior_ambient_color = Color( 0.199219, 0.158686, 0.111282, 1 )
+interior_ambient_energy = 0.1
 interior_ambient_contrib = 0.0
+_sections_unfolded = [ "Interior" ]
 
 [node name="text1" type="MeshInstance" parent="world" index="2"]
 
 transform = Transform( 2.41231, 0, 0, 0, 2.41231, 0, 0, 0, 0.066145, -3.31221, 2.9031, -11.3495 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -1076,6 +1089,7 @@ _sections_unfolded = [ "material" ]
 [node name="text2" type="MeshInstance" parent="world" index="3"]
 
 transform = Transform( -9.14904e-08, 0, -0.0573912, 0, 2.09306, 0, 2.09306, 0, -2.50865e-09, 5.90398, 1.3695, -0.627127 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -1093,6 +1107,7 @@ _sections_unfolded = [ "material" ]
 [node name="text3" type="MeshInstance" parent="world" index="4"]
 
 transform = Transform( -9.14904e-08, 0, -0.0573912, 0, 2.09306, 0, 2.09306, 0, -2.50865e-09, 7.51984, 10.4897, -3.32487 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -1117,8 +1132,6 @@ transform = Transform( 1.31671e-07, 0, -1.74403, 0, 1.74403, 0, 1.74403, 0, 1.31
 _sections_unfolded = [ "Transform" ]
 
 [node name="Room" type="Spatial" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="MeshInstance3" type="MeshInstance" parent="Room" index="0"]
 
@@ -1774,7 +1787,6 @@ disabled = false
 
 [node name="room" type="MeshInstance" parent="Room" index="7"]
 
-editor/display_folded = true
 transform = Transform( 0.765425, 0, 0, 0, 0.765425, 0, 0, 0, 0.765425, 0.00668681, 4.04285, -0.0468134 )
 layers = 1
 material_override = null
@@ -1807,13 +1819,22 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = SubResource( 19 )
 disabled = false
 
+[node name="CollisionShape2" type="CollisionShape" parent="Room/room/StaticBody" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3621, 0, 0 )
+shape = SubResource( 32 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
 [node name="Desk" parent="." index="5" instance=ExtResource( 15 )]
 
+editor/display_folded = true
 transform = Transform( 2.26257, 0, 0, 0, 2.26257, 0, 0, 0, 2.26257, -3.43495, -0.164689, 0 )
 
 [node name="monitor" parent="Desk" index="0"]
 
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260468, 1.09987, 0.495487 )
 
 [node name="OmniLight" type="OmniLight" parent="Desk/monitor" index="2"]
 
@@ -1838,13 +1859,13 @@ omni_shadow_mode = 1
 omni_shadow_detail = 1
 _sections_unfolded = [ "Shadow" ]
 
+[node name="Desk" parent="Desk" index="2"]
+
+editor/display_folded = true
+
 [node name="cupboard_slide" parent="Desk/Desk/cupboard/slide" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252098, -0.00117677, -0.0075407 )
-
-[node name="top.1" parent="Desk/Desk" index="1"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00163519, 0.810587, -0.000754274 )
 
 [node name="Ladder" parent="." index="6" instance=ExtResource( 16 )]
 
@@ -1859,16 +1880,16 @@ input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 10.0
+mass = 1.0
 friction = 1.0
-bounce = 0.1
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = false
+can_sleep = true
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
@@ -1914,16 +1935,16 @@ input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 10.0
+mass = 1.0
 friction = 1.0
-bounce = 0.6
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = false
+can_sleep = true
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
@@ -1969,16 +1990,16 @@ input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 20.0
+mass = 1.0
 friction = 1.0
-bounce = 0.6
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = false
+can_sleep = true
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
@@ -2062,26 +2083,25 @@ disabled = false
 
 [node name="light_2" type="OmniLight" parent="Ceiling_Lamp2" index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249788, -2.11305, -0.0399599 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249788, -1.20782, -0.0399599 )
 layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
+light_color = Color( 0.925781, 0.790903, 0.701569, 1 )
+light_energy = 3.0
+light_indirect_energy = 10.0
 light_negative = false
-light_specular = 0.5
+light_specular = 1.0
 light_bake_mode = 1
 light_cull_mask = -1
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.14
-shadow_contact = 0.45
+shadow_bias = 1.0
+shadow_contact = 0.3
 shadow_reverse_cull_face = false
 editor_only = false
-omni_range = 11.5403
+omni_range = 30.0
 omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
-_sections_unfolded = [ "Light", "Shadow" ]
 
 [node name="Ceiling_Lamp1" type="StaticBody" parent="." index="12"]
 
@@ -2124,26 +2144,26 @@ disabled = false
 
 [node name="light_1" type="OmniLight" parent="Ceiling_Lamp1" index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800302, -2.08603, 0.0658698 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031378, -1.47082, -0.0491462 )
 layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
+light_color = Color( 0.863281, 0.597985, 0.505829, 1 )
+light_energy = 10.0
+light_indirect_energy = 10.0
 light_negative = false
-light_specular = 0.5
+light_specular = 1.0
 light_bake_mode = 1
 light_cull_mask = -1
-shadow_enabled = true
+shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.14
-shadow_contact = 0.45
+shadow_bias = 1.0
+shadow_contact = 0.3
 shadow_reverse_cull_face = false
 editor_only = false
-omni_range = 11.5403
+omni_range = 20.0
 omni_attenuation = 1.0
 omni_shadow_mode = 1
-omni_shadow_detail = 1
-_sections_unfolded = [ "Editor", "Light", "Shadow" ]
+omni_shadow_detail = 0
+_sections_unfolded = [ "Light", "Shadow" ]
 
 
 [editable path="Desk"]

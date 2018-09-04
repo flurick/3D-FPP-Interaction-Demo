@@ -72,19 +72,19 @@ func _process(d):
 	if $Yaw/Camera/InteractionRay.is_colliding():
 		var x = $Yaw/Camera/InteractionRay.get_collider()
 		if x.has_method("pick_up"):
-			$interaction_text.set_text("[F]  Pick up: " + x.get_name())
+			find_node("interaction_text").set_text(x.get_name())
 		elif x.has_method("interact"):
-			$interaction_text.set_text("[E]  Interact with: " + x.get_name())
+			find_node("interaction_text").set_text(x.get_name())
 		else:
-			$interaction_text.set_text("")
+			find_node("interaction_text").set_text("")
 	else:
-		$interaction_text.set_text("")
+		find_node("interaction_text").set_text("")
 
 
 #######################################################################################################
 # VECTOR 3 for where the player is currently looking
 
-	var dir = (get_node("Yaw/Camera/look_at").get_global_transform().origin - get_node("Yaw/Camera").get_global_transform().origin).normalized()
+	var dir = (get_node("Yaw/Camera/look_at").get_global_transform().origin - get_node("Yaw/Camera").get_global_transform().origin)#.normalized()
 	look_vector = dir
 
 
@@ -267,7 +267,7 @@ func _apply_gravity(delta):
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		yaw = fmod(yaw - event.relative.x * view_sensitivity, 360)
-		pitch = max(min(pitch - event.relative.y * view_sensitivity, 89), -89)
+		pitch = max(min(pitch - event.relative.y * view_sensitivity, 80), -80)
 		$Yaw.rotation = Vector3(0, deg2rad(yaw), 0)
 		$Yaw/Camera.rotation = Vector3(deg2rad(pitch), 0, 0)
 
@@ -280,6 +280,9 @@ func _input(event):
 	if Input.is_key_pressed(KEY_R):
 		get_tree().reload_current_scene()
 
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+
 	# If already carries an object - release it, otherwise (if ray is colliding) pick an object up
 	if Input.is_action_just_pressed("pick_up"):
 		if carried_object != null:
@@ -291,7 +294,7 @@ func _input(event):
 					x.pick_up(self)
 
 	# Hold Left Mouse Button (LMB) to throw carried object
-	if Input.is_action_just_released("LMB"):
+	if Input.is_action_just_released("pick_up"):
 		if carried_object != null:
 			carried_object.throw(throw_power)
 		throw_power = 0
@@ -304,7 +307,6 @@ func _input(event):
 			print(x.get_name())
 			if x.has_method("interact"):
 				x.interact(self)
-
 
 	# Crouching
 
@@ -352,9 +354,9 @@ func impulse(vector_towards, power, time):
 # THROW STUFF
 func throwing(delta):
 	if carried_object != null:
-		if Input.is_action_pressed("LMB"):
+		if Input.is_action_pressed("pick_up"):
 			if throw_power <= 250:
-				throw_power += 2
+				throw_power += 1
 
 # SHOW A MESSAGE ON SCREEN
 func show_message(text, time):

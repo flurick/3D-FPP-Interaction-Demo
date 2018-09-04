@@ -4,6 +4,7 @@
 
 [sub_resource type="SphereMesh" id=1]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
@@ -94,6 +95,7 @@ linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Axis Lock", "Collision", "collision" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 

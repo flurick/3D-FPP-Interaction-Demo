@@ -1,9 +1,8 @@
-
 extends RigidBody
 
 var picked_up
-
 var holder
+
 
 func pick_up(player):
 	holder = player
@@ -15,7 +14,12 @@ func pick_up(player):
 
 func _process(delta):
 	if picked_up:
-		set_global_transform(holder.get_node("Yaw/Camera/pickup_pos").get_global_transform())
+		var target = holder.find_node("pickup_pos").get_global_transform()
+		#set_global_transform(target)
+		set_linear_velocity(target.origin)
+		#apply_impulse(target.origin, Vector3(10,0,0))
+
+
 
 func carry():
 	$CollisionShape.set_disabled(true)
