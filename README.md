@@ -1,5 +1,5 @@
-# GODOT Engine 3D FPP Interaction Demo
-[Godot 3.x] First Person Perspective demo/template.
+# Interaction Demo
+[Godot 3.x] First Person Perspective demo.
 
 # Features:
 * Movement (walking, sprinting, jumping, crouching)
