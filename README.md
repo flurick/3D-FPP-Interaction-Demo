@@ -11,4 +11,4 @@ First Person Perspective [Godot 3.x](https://godotengine.org) demo.
 Also showcasing:
 * Different RigidBody physics
 * Animation states for interactable objects
-![Screenshot of the room scene](screenshot.PNG)
+![Screenshot of the room scene](screenshot.png)
