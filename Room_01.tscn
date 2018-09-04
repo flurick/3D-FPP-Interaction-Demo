@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://misc/instructions.png" type="Texture" id=2]
@@ -66,6 +66,7 @@ ssao_radius2 = 1.0
 ssao_intensity2 = 1.0
 ssao_bias = 0.01
 ssao_light_affect = 0.7
+ssao_ao_channel_affect = 0.0
 ssao_color = Color( 0, 0, 0, 1 )
 ssao_quality = 0
 ssao_blur = 3
@@ -104,6 +105,7 @@ _sections_unfolded = [ "Ambient Light", "Auto Exposure", "DOF Far Blur", "SSAO" 
 [sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -120,6 +122,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -130,6 +135,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -159,7 +165,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "UV1" ]
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -173,6 +179,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -183,6 +192,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -212,7 +222,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "UV1" ]
 
 [sub_resource type="SpatialMaterial" id=5]
@@ -226,6 +236,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -236,6 +249,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -265,12 +279,13 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "UV1" ]
 
 [sub_resource type="CubeMesh" id=6]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -287,6 +302,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -297,6 +315,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -328,12 +347,13 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness", "UV1" ]
 
 [sub_resource type="CubeMesh" id=8]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -350,6 +370,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -360,6 +383,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -391,12 +415,13 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness" ]
 
 [sub_resource type="PlaneMesh" id=10]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
@@ -412,6 +437,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -422,6 +450,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 0.718316, 0.527344, 1 )
@@ -450,12 +479,13 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Roughness" ]
 
 [sub_resource type="CubeMesh" id=12]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -472,6 +502,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -482,6 +515,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.545098, 0.372549, 0.282353, 1 )
@@ -510,26 +544,142 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "Roughness", "UV1" ]
 
-[sub_resource type="ConcavePolygonShape" id=14]
+[sub_resource type="PhysicsMaterial" id=14]
 
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
 
 [sub_resource type="ConcavePolygonShape" id=15]
 
+margin = 0.04
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="ConcavePolygonShape" id=16]
+[sub_resource type="PhysicsMaterial" id=16]
 
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=17]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="ConcavePolygonShape" id=18]
+
+margin = 0.04
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="ConcavePolygonShape" id=17]
+[sub_resource type="PhysicsMaterial" id=19]
 
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=20]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="ConcavePolygonShape" id=21]
+
+margin = 0.04
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="PhysicsMaterial" id=22]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=23]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="ConcavePolygonShape" id=24]
+
+margin = 0.04
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="PhysicsMaterial" id=25]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=26]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=27]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=28]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=29]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=30]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=31]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=32]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=33]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="SpatialMaterial" id=34]
 
 render_priority = 0
 flags_transparent = false
@@ -540,6 +690,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -550,6 +703,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 0.597412, 0.242188, 1 )
@@ -582,27 +736,93 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness", "UV1" ]
 
-[sub_resource type="ConcavePolygonShape" id=19]
+[sub_resource type="PhysicsMaterial" id=35]
 
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="ConcavePolygonShape" id=36]
+
+margin = 0.04
 data = PoolVector3Array( -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, 14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, -7.7852, 5.7617, 14.7031, -8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, -5.2773, -14.7031, 7.7852, 5.7617, 14.7031, 7.7852, -5.2773, 14.7031, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, 5.7617, -14.7031, -7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, -14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, -14.7031 )
 
-[sub_resource type="BoxShape" id=32]
+[sub_resource type="BoxShape" id=37]
 
+margin = 0.04
 extents = Vector3( 4.58274, 8.16975, 16.0288 )
 
-[sub_resource type="SphereMesh" id=20]
+[sub_resource type="PhysicsMaterial" id=38]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=39]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=40]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=41]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=42]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=43]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=44]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=45]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="SphereMesh" id=46]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 radius = 1.0
 height = 2.0
 radial_segments = 12
 rings = 12
 is_hemisphere = false
 
-[sub_resource type="SpatialMaterial" id=21]
+[sub_resource type="SpatialMaterial" id=47]
 
 render_priority = 0
 flags_transparent = false
@@ -613,6 +833,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -623,6 +846,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 0, 0, 1 )
@@ -651,14 +875,22 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SphereShape" id=22]
+[sub_resource type="SphereShape" id=48]
 
+margin = 0.04
 radius = 0.1
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="PhysicsMaterial" id=49]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="SpatialMaterial" id=50]
 
 render_priority = 0
 flags_transparent = false
@@ -669,6 +901,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -679,6 +914,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.993683, 1, 0.191406, 1 )
@@ -710,10 +946,17 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "Roughness", "Subsurf Scatter", "UV1" ]
 
-[sub_resource type="SpatialMaterial" id=24]
+[sub_resource type="PhysicsMaterial" id=51]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="SpatialMaterial" id=52]
 
 render_priority = 0
 flags_transparent = false
@@ -724,6 +967,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -734,6 +980,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -764,10 +1011,10 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness", "Subsurf Scatter", "UV1" ]
 
-[sub_resource type="SpatialMaterial" id=25]
+[sub_resource type="SpatialMaterial" id=53]
 
 render_priority = 0
 flags_transparent = false
@@ -778,6 +1025,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -788,6 +1038,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.0788342, 0.0788342, 0.0788342, 1 )
@@ -816,14 +1067,22 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Metallic", "NormalMap", "Roughness" ]
 
-[sub_resource type="SphereShape" id=26]
+[sub_resource type="SphereShape" id=54]
 
+margin = 0.04
 radius = 0.437386
 
-[sub_resource type="SpatialMaterial" id=27]
+[sub_resource type="PhysicsMaterial" id=55]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="SpatialMaterial" id=56]
 
 render_priority = 0
 flags_transparent = false
@@ -834,6 +1093,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -844,6 +1106,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -872,9 +1135,9 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 
-[sub_resource type="SpatialMaterial" id=28]
+[sub_resource type="SpatialMaterial" id=57]
 
 render_priority = 0
 flags_transparent = false
@@ -885,6 +1148,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -895,6 +1161,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -923,9 +1190,9 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 
-[sub_resource type="SpatialMaterial" id=29]
+[sub_resource type="SpatialMaterial" id=58]
 
 render_priority = 0
 flags_transparent = false
@@ -936,6 +1203,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -946,6 +1216,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -978,10 +1249,10 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Emission" ]
 
-[sub_resource type="SpatialMaterial" id=30]
+[sub_resource type="SpatialMaterial" id=59]
 
 render_priority = 0
 flags_transparent = false
@@ -992,6 +1263,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -1002,6 +1276,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -1030,28 +1305,32 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 
-[sub_resource type="BoxShape" id=31]
+[sub_resource type="BoxShape" id=60]
 
+margin = 0.04
 extents = Vector3( 0.483239, 0.695562, 0.491112 )
+
+[sub_resource type="PhysicsMaterial" id=61]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
 
 [node name="Room_01" type="Node"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
-
+[node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.743642, 0, 0.668578, 0, 1, 0, -0.668578, 0, 0.743642, 2, -0.0959454, 1.31089 )
 
-[node name="world" type="Node" parent="." index="1"]
-
+[node name="world" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="world" index="0"]
-
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
 environment = SubResource( 1 )
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="world" index="1"]
-
+[node name="ReflectionProbe" type="ReflectionProbe" parent="world"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0118, 0 )
 layers = 1
 update_mode = 0
@@ -1068,8 +1347,7 @@ interior_ambient_energy = 0.1
 interior_ambient_contrib = 0.0
 _sections_unfolded = [ "Interior" ]
 
-[node name="text1" type="MeshInstance" parent="world" index="2"]
-
+[node name="text1" type="MeshInstance" parent="world"]
 transform = Transform( 2.41231, 0, 0, 0, 2.41231, 0, 0, 0, 0.066145, -3.31221, 2.9031, -11.3495 )
 visible = false
 layers = 1
@@ -1086,8 +1364,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 _sections_unfolded = [ "material" ]
 
-[node name="text2" type="MeshInstance" parent="world" index="3"]
-
+[node name="text2" type="MeshInstance" parent="world"]
 transform = Transform( -9.14904e-08, 0, -0.0573912, 0, 2.09306, 0, 2.09306, 0, -2.50865e-09, 5.90398, 1.3695, -0.627127 )
 visible = false
 layers = 1
@@ -1104,8 +1381,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 _sections_unfolded = [ "material" ]
 
-[node name="text3" type="MeshInstance" parent="world" index="4"]
-
+[node name="text3" type="MeshInstance" parent="world"]
 transform = Transform( -9.14904e-08, 0, -0.0573912, 0, 2.09306, 0, 2.09306, 0, -2.50865e-09, 7.51984, 10.4897, -3.32487 )
 visible = false
 layers = 1
@@ -1122,19 +1398,17 @@ skeleton = NodePath("..")
 material/0 = SubResource( 5 )
 _sections_unfolded = [ "material" ]
 
-[node name="Basketball_board" parent="." index="2" instance=ExtResource( 5 )]
-
+[node name="Basketball_board" parent="." instance=ExtResource( 5 )]
 transform = Transform( -7.71819e-08, 0, -1.76572, 0, 1.76572, 0, 1.76572, 0, -7.71819e-08, 0, 4.37174, -11.361 )
 
-[node name="Door" parent="." index="3" instance=ExtResource( 6 )]
-
+[node name="Door" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1.31671e-07, 0, -1.74403, 0, 1.74403, 0, 1.74403, 0, 1.31671e-07, -5.9244, 0, -4.93043 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Room" type="Spatial" parent="." index="4"]
+[node name="Room" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="MeshInstance3" type="MeshInstance" parent="Room" index="0"]
-
+[node name="MeshInstance3" type="MeshInstance" parent="Room"]
 transform = Transform( 0.2, 0, 0, 0, 0.15, 0, 0, 0, 11.6375, -6, 0, 0 )
 layers = 1
 material_override = null
@@ -1149,8 +1423,7 @@ mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 
-[node name="MeshInstance4" type="MeshInstance" parent="Room" index="1"]
-
+[node name="MeshInstance4" type="MeshInstance" parent="Room"]
 transform = Transform( 0.2, 0, 0, 0, 0.15, 0, 0, 0, 11.6375, 6, 0, 0 )
 layers = 1
 material_override = null
@@ -1165,8 +1438,7 @@ mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 
-[node name="MeshInstance5" type="MeshInstance" parent="Room" index="2"]
-
+[node name="MeshInstance5" type="MeshInstance" parent="Room"]
 transform = Transform( -8.74228e-09, 0, 5.81875, 0, 0.15, 0, -0.2, 0, -2.54346e-07, -4.95985e-07, 0, -11.3468 )
 layers = 1
 material_override = null
@@ -1181,8 +1453,7 @@ mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 
-[node name="MeshInstance6" type="MeshInstance" parent="Room" index="3"]
-
+[node name="MeshInstance6" type="MeshInstance" parent="Room"]
 transform = Transform( -8.74228e-09, 0, 5.81875, 0, 0.15, 0, -0.2, 0, -2.54346e-07, 4.93028e-07, 0, 11.2792 )
 layers = 1
 material_override = null
@@ -1197,8 +1468,7 @@ mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 
-[node name="floor" type="MeshInstance" parent="Room" index="4"]
-
+[node name="floor" type="MeshInstance" parent="Room"]
 transform = Transform( 6.05, 0, 0, 0, 0.05, 0, 0, 0, 11.25, 0, -0.0426321, 0 )
 layers = 1
 material_override = null
@@ -1214,8 +1484,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 9 )
 _sections_unfolded = [ "material" ]
 
-[node name="ceiling" type="MeshInstance" parent="Room" index="5"]
-
+[node name="ceiling" type="MeshInstance" parent="Room"]
 transform = Transform( -6.16583, 8.74228e-08, 0, -5.39034e-07, -1, 0, 0, 0, 11.6728, -0.00774586, 8.48176, -0.0179863 )
 layers = 1
 material_override = null
@@ -1231,13 +1500,11 @@ skeleton = NodePath("..")
 material/0 = SubResource( 11 )
 _sections_unfolded = [ "Geometry", "LOD", "material" ]
 
-[node name="stairs" type="Spatial" parent="Room" index="6"]
-
+[node name="stairs" type="Spatial" parent="Room"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17697, 0, 4 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="Room/stairs" index="0"]
-
+[node name="MeshInstance3" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 0.231669, 0 )
 layers = 1
@@ -1254,24 +1521,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance3" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance3"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 14 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance3/StaticBody" index="0"]
-
-shape = SubResource( 14 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance3/StaticBody"]
+shape = SubResource( 15 )
 disabled = false
 
-[node name="MeshInstance7" type="MeshInstance" parent="Room/stairs" index="1"]
-
+[node name="MeshInstance7" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 2.23167, 2 )
 layers = 1
@@ -1288,24 +1551,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance7" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance7"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 16 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance7/StaticBody" index="0"]
-
-shape = SubResource( 14 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance7/StaticBody"]
+shape = SubResource( 15 )
 disabled = false
 
-[node name="MeshInstance5" type="MeshInstance" parent="Room/stairs" index="2"]
-
+[node name="MeshInstance5" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 1.23167, 1 )
 layers = 1
@@ -1322,24 +1581,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance5" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance5"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 17 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance5/StaticBody" index="0"]
-
-shape = SubResource( 15 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance5/StaticBody"]
+shape = SubResource( 18 )
 disabled = false
 
-[node name="MeshInstance9" type="MeshInstance" parent="Room/stairs" index="3"]
-
+[node name="MeshInstance9" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 3.23167, 3 )
 layers = 1
@@ -1356,24 +1611,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance9" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance9"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 19 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance9/StaticBody" index="0"]
-
-shape = SubResource( 15 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance9/StaticBody"]
+shape = SubResource( 18 )
 disabled = false
 
-[node name="MeshInstance4" type="MeshInstance" parent="Room/stairs" index="4"]
-
+[node name="MeshInstance4" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 0.731669, 0.5 )
 layers = 1
@@ -1390,24 +1641,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance4" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance4"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 20 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance4/StaticBody" index="0"]
-
-shape = SubResource( 16 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance4/StaticBody"]
+shape = SubResource( 21 )
 disabled = false
 
-[node name="MeshInstance8" type="MeshInstance" parent="Room/stairs" index="5"]
-
+[node name="MeshInstance8" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 2.73167, 2.5 )
 layers = 1
@@ -1424,24 +1671,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance8" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance8"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 22 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance8/StaticBody" index="0"]
-
-shape = SubResource( 16 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance8/StaticBody"]
+shape = SubResource( 21 )
 disabled = false
 
-[node name="MeshInstance6" type="MeshInstance" parent="Room/stairs" index="6"]
-
+[node name="MeshInstance6" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 1.73167, 1.5 )
 layers = 1
@@ -1458,24 +1701,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance6" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance6"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 23 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance6/StaticBody" index="0"]
-
-shape = SubResource( 17 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance6/StaticBody"]
+shape = SubResource( 24 )
 disabled = false
 
-[node name="MeshInstance10" type="MeshInstance" parent="Room/stairs" index="7"]
-
+[node name="MeshInstance10" type="MeshInstance" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 3.73167, 3.5 )
 layers = 1
@@ -1492,29 +1731,24 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance10" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/MeshInstance10"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 25 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance10/StaticBody" index="0"]
-
-shape = SubResource( 17 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/MeshInstance10/StaticBody"]
+shape = SubResource( 24 )
 disabled = false
 
-[node name="stairs2" type="Spatial" parent="Room/stairs" index="8"]
-
+[node name="stairs2" type="Spatial" parent="Room/stairs"]
 editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 3.5, 4.5 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="Room/stairs/stairs2" index="0"]
-
+[node name="MeshInstance3" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 1.1486, 0, 0.231669, -0.855305 )
 layers = 1
@@ -1531,24 +1765,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance3" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance3"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 26 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance3/StaticBody" index="0"]
-
-shape = SubResource( 14 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance3/StaticBody"]
+shape = SubResource( 15 )
 disabled = false
 
-[node name="MeshInstance7" type="MeshInstance" parent="Room/stairs/stairs2" index="1"]
-
+[node name="MeshInstance7" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 2.23167, 2 )
 layers = 1
@@ -1565,24 +1795,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance7" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance7"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 27 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance7/StaticBody" index="0"]
-
-shape = SubResource( 14 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance7/StaticBody"]
+shape = SubResource( 15 )
 disabled = false
 
-[node name="MeshInstance5" type="MeshInstance" parent="Room/stairs/stairs2" index="2"]
-
+[node name="MeshInstance5" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 1.23167, 1 )
 layers = 1
@@ -1599,24 +1825,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance5" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance5"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 28 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance5/StaticBody" index="0"]
-
-shape = SubResource( 15 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance5/StaticBody"]
+shape = SubResource( 18 )
 disabled = false
 
-[node name="MeshInstance9" type="MeshInstance" parent="Room/stairs/stairs2" index="3"]
-
+[node name="MeshInstance9" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 3.23167, 3 )
 layers = 1
@@ -1633,24 +1855,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance9" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance9"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 29 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance9/StaticBody" index="0"]
-
-shape = SubResource( 15 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance9/StaticBody"]
+shape = SubResource( 18 )
 disabled = false
 
-[node name="MeshInstance4" type="MeshInstance" parent="Room/stairs/stairs2" index="4"]
-
+[node name="MeshInstance4" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 0.731669, 0.5 )
 layers = 1
@@ -1667,24 +1885,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance4" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance4"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 30 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance4/StaticBody" index="0"]
-
-shape = SubResource( 16 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance4/StaticBody"]
+shape = SubResource( 21 )
 disabled = false
 
-[node name="MeshInstance8" type="MeshInstance" parent="Room/stairs/stairs2" index="5"]
-
+[node name="MeshInstance8" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 2.73167, 2.5 )
 layers = 1
@@ -1701,24 +1915,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance8" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance8"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 31 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance8/StaticBody" index="0"]
-
-shape = SubResource( 16 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance8/StaticBody"]
+shape = SubResource( 21 )
 disabled = false
 
-[node name="MeshInstance6" type="MeshInstance" parent="Room/stairs/stairs2" index="6"]
-
+[node name="MeshInstance6" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 1.73167, 1.5 )
 layers = 1
@@ -1735,24 +1945,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance6" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance6"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 32 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance6/StaticBody" index="0"]
-
-shape = SubResource( 17 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance6/StaticBody"]
+shape = SubResource( 24 )
 disabled = false
 
-[node name="MeshInstance10" type="MeshInstance" parent="Room/stairs/stairs2" index="7"]
-
+[node name="MeshInstance10" type="MeshInstance" parent="Room/stairs/stairs2"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.12301, 0, 0, 0, 0.3, 0, 3.73167, 3.5 )
 layers = 1
@@ -1769,24 +1975,20 @@ skeleton = NodePath("..")
 material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance10" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/stairs/stairs2/MeshInstance10"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 33 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance10/StaticBody" index="0"]
-
-shape = SubResource( 17 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/stairs/stairs2/MeshInstance10/StaticBody"]
+shape = SubResource( 24 )
 disabled = false
 
-[node name="room" type="MeshInstance" parent="Room" index="7"]
-
+[node name="room" type="MeshInstance" parent="Room"]
 transform = Transform( 0.765425, 0, 0, 0, 0.765425, 0, 0, 0, 0.765425, 0.00668681, 4.04285, -0.0468134 )
 layers = 1
 material_override = null
@@ -1800,44 +2002,38 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
-material/1 = SubResource( 18 )
+material/1 = SubResource( 34 )
 _sections_unfolded = [ "Geometry", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="Room/room" index="0"]
-
+[node name="StaticBody" type="StaticBody" parent="Room/room"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 35 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Room/room/StaticBody" index="0"]
-
-shape = SubResource( 19 )
+[node name="CollisionShape" type="CollisionShape" parent="Room/room/StaticBody"]
+shape = SubResource( 36 )
 disabled = false
 
-[node name="CollisionShape2" type="CollisionShape" parent="Room/room/StaticBody" index="1"]
-
+[node name="CollisionShape2" type="CollisionShape" parent="Room/room/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3621, 0, 0 )
-shape = SubResource( 32 )
+shape = SubResource( 37 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Desk" parent="." index="5" instance=ExtResource( 15 )]
-
+[node name="Desk" parent="." instance=ExtResource( 15 )]
 editor/display_folded = true
 transform = Transform( 2.26257, 0, 0, 0, 2.26257, 0, 0, 0, 2.26257, -3.43495, -0.164689, 0 )
 
 [node name="monitor" parent="Desk" index="0"]
-
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260468, 1.09987, 0.495487 )
+physics_material_override = SubResource( 38 )
 
 [node name="OmniLight" type="OmniLight" parent="Desk/monitor" index="2"]
-
 transform = Transform( 0.441975, 0, 0, 0, 0.441975, 0, 0, 0, 0.441975, 0.0919178, 0.119501, -0.056951 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
@@ -1860,19 +2056,31 @@ omni_shadow_detail = 1
 _sections_unfolded = [ "Shadow" ]
 
 [node name="Desk" parent="Desk" index="2"]
-
 editor/display_folded = true
 
-[node name="cupboard_slide" parent="Desk/Desk/cupboard/slide" index="0"]
+[node name="StaticBody" parent="Desk/Desk/cupboard/base/cupboard_base" index="0"]
+physics_material_override = SubResource( 39 )
 
+[node name="cupboard_slide" parent="Desk/Desk/cupboard/slide" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252098, -0.00117677, -0.0075407 )
 
-[node name="Ladder" parent="." index="6" instance=ExtResource( 16 )]
+[node name="top_drawer" parent="Desk/Desk/cupboard/slide/cupboard_slide" index="1"]
+physics_material_override = SubResource( 40 )
 
+[node name="bottom_drawer" parent="Desk/Desk/cupboard/slide_2/cupboard_slide" index="1"]
+physics_material_override = SubResource( 41 )
+
+[node name="StaticBody" parent="Desk/Desk/top" index="0"]
+physics_material_override = SubResource( 42 )
+
+[node name="StaticBody" parent="Desk/Desk/legs" index="0"]
+physics_material_override = SubResource( 43 )
+
+[node name="Ladder" parent="." instance=ExtResource( 16 )]
 transform = Transform( 1.40646, 0, 0, 0, 1.40646, 0, 0, 0, 1.40646, 5.85912, -0.133712, -3.43418 )
+physics_material_override = SubResource( 44 )
 
-[node name="plastic_ball" type="RigidBody" parent="." index="7"]
-
+[node name="plastic ball" type="RigidBody" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.999582, -0.0288956, 0, 0.0288956, 0.999582, -2.71077, 2.10183, -1.35945 )
 input_ray_pickable = true
@@ -1881,15 +2089,14 @@ collision_layer = 1
 collision_mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 45 )
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
-can_sleep = true
+can_sleep = false
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
@@ -1903,8 +2110,7 @@ angular_damp = -1.0
 script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="plastic_ball" index="0"]
-
+[node name="MeshInstance" type="MeshInstance" parent="plastic ball"]
 transform = Transform( 0.15746, 0, 0, 0, 0.15746, -4.65661e-10, 0, 4.65661e-10, 0.15746, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -1915,19 +2121,17 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 20 )
+mesh = SubResource( 46 )
 skeleton = NodePath("..")
-material/0 = SubResource( 21 )
+material/0 = SubResource( 47 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="plastic_ball" index="1"]
-
+[node name="CollisionShape" type="CollisionShape" parent="plastic ball"]
 transform = Transform( 1.5746, 0, 0, 0, 1.5746, 0, 0, 0, 1.5746, 0, 0, 0 )
-shape = SubResource( 22 )
+shape = SubResource( 48 )
 disabled = false
 
-[node name="rubber_ball" type="RigidBody" parent="." index="8"]
-
+[node name="rubber ball" type="RigidBody" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.999582, -0.0288956, 0, 0.0288956, 0.999582, -3.06532, 2.10183, 1.84988 )
 input_ray_pickable = true
@@ -1936,8 +2140,7 @@ collision_layer = 1
 collision_mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 49 )
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
@@ -1958,8 +2161,7 @@ angular_damp = -1.0
 script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="rubber_ball" index="0"]
-
+[node name="MeshInstance" type="MeshInstance" parent="rubber ball"]
 transform = Transform( 0.205196, 0, 0, 0, 0.205197, 4.65661e-10, 0, -4.65661e-10, 0.205197, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -1970,19 +2172,17 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 20 )
+mesh = SubResource( 46 )
 skeleton = NodePath("..")
-material/0 = SubResource( 23 )
+material/0 = SubResource( 50 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="rubber_ball" index="1"]
-
+[node name="CollisionShape" type="CollisionShape" parent="rubber ball"]
 transform = Transform( 2.05196, 0, 0, 0, 2.05197, -7.45058e-09, 0, 7.45058e-09, 2.05197, 0, 0, 0 )
-shape = SubResource( 22 )
+shape = SubResource( 48 )
 disabled = false
 
-[node name="basketball ball" type="RigidBody" parent="." index="9"]
-
+[node name="basketball ball" type="RigidBody" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.999582, -0.0288956, 0, 0.0288956, 0.999582, 0, 0.675475, -6.17433 )
 input_ray_pickable = true
@@ -1991,8 +2191,7 @@ collision_layer = 1
 collision_mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 51 )
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
@@ -2013,8 +2212,7 @@ angular_damp = -1.0
 script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="basketball ball" index="0"]
-
+[node name="MeshInstance" type="MeshInstance" parent="basketball ball"]
 transform = Transform( 0.00452631, 0, 0, 0, 0.00452633, -1.45519e-11, 0, 1.45519e-11, 0.00452633, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -2027,36 +2225,30 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 18 )
 skeleton = NodePath("..")
-material/0 = SubResource( 24 )
-material/1 = SubResource( 25 )
+material/0 = SubResource( 52 )
+material/1 = SubResource( 53 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="basketball ball" index="1"]
-
-shape = SubResource( 26 )
+[node name="CollisionShape" type="CollisionShape" parent="basketball ball"]
+shape = SubResource( 54 )
 disabled = false
 
-[node name="light_switch" parent="." index="10" instance=ExtResource( 20 )]
-
+[node name="light_switch" parent="." instance=ExtResource( 20 )]
 transform = Transform( 0.219499, 0, 0, 0, 0.219499, 0, 0, 0, 0.219499, -5.94192, 2.5784, -4.16487 )
-light_1 = NodePath("../Ceiling_Lamp1/light_1")
-light_2 = NodePath("../Ceiling_Lamp2/light_2")
+light_1 = NodePath("../Lamp 1/Light")
+light_2 = NodePath("../Lamp 2/Light")
 
-[node name="Ceiling_Lamp2" type="StaticBody" parent="." index="11"]
-
-editor/display_folded = true
+[node name="Lamp 2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800302, 8.62056, -4.97885 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 55 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="Ceiling_Lamp" type="MeshInstance" parent="Ceiling_Lamp2" index="0"]
-
+[node name="Ceiling_Lamp" type="MeshInstance" parent="Lamp 2"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -1.00401, 0 )
 layers = 1
 material_override = null
@@ -2069,20 +2261,18 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 21 )
 skeleton = NodePath("..")
-material/0 = SubResource( 27 )
-material/1 = SubResource( 28 )
-material/2 = SubResource( 29 )
-material/3 = SubResource( 30 )
+material/0 = SubResource( 56 )
+material/1 = SubResource( 57 )
+material/2 = SubResource( 58 )
+material/3 = SubResource( 59 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Ceiling_Lamp2" index="1"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Lamp 2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.699918, 0 )
-shape = SubResource( 31 )
+shape = SubResource( 60 )
 disabled = false
 
-[node name="light_2" type="OmniLight" parent="Ceiling_Lamp2" index="2"]
-
+[node name="Light" type="OmniLight" parent="Lamp 2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249788, -1.20782, -0.0399599 )
 layers = 1
 light_color = Color( 0.925781, 0.790903, 0.701569, 1 )
@@ -2103,21 +2293,17 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="Ceiling_Lamp1" type="StaticBody" parent="." index="12"]
-
-editor/display_folded = true
+[node name="Lamp 1" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800302, 8.62056, 5.99616 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-friction = 1.0
-bounce = 0.0
+physics_material_override = SubResource( 61 )
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="Ceiling_Lamp" type="MeshInstance" parent="Ceiling_Lamp1" index="0"]
-
+[node name="Ceiling_Lamp" type="MeshInstance" parent="Lamp 1"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -1.00401, 0 )
 layers = 1
 material_override = null
@@ -2130,20 +2316,18 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 21 )
 skeleton = NodePath("..")
-material/0 = SubResource( 27 )
-material/1 = SubResource( 28 )
-material/2 = SubResource( 29 )
-material/3 = SubResource( 30 )
+material/0 = SubResource( 56 )
+material/1 = SubResource( 57 )
+material/2 = SubResource( 58 )
+material/3 = SubResource( 59 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Ceiling_Lamp1" index="1"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Lamp 1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.699918, 0 )
-shape = SubResource( 31 )
+shape = SubResource( 60 )
 disabled = false
 
-[node name="light_1" type="OmniLight" parent="Ceiling_Lamp1" index="2"]
-
+[node name="Light" type="OmniLight" parent="Lamp 1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031378, -1.47082, -0.0491462 )
 layers = 1
 light_color = Color( 0.863281, 0.597985, 0.505829, 1 )

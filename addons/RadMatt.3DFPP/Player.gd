@@ -49,8 +49,8 @@ const JUMP_STR = 15
 
 # Ladder
 var on_ladder = false
-const LADDER_SPEED = 8
-const LADDER_ACCEL = 2
+const LADDER_SPEED = 13
+const LADDER_ACCEL = 5
 
 #slope variables
 const MAX_SLOPE_ANGLE = 60
@@ -356,7 +356,7 @@ func throwing(delta):
 	if carried_object != null:
 		if Input.is_action_pressed("pick_up"):
 			if throw_power <= 250:
-				throw_power += 1
+				throw_power += 3
 
 # SHOW A MESSAGE ON SCREEN
 func show_message(text, time):
