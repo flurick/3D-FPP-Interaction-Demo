@@ -1,5 +1,5 @@
 # Interaction Demo
-[Godot 3.x] First Person Perspective demo.
+First Person Perspective [Godot 3.x](https://godotengine.org) demo.
 
 # Features:
 * Movement (walking, sprinting, jumping, crouching)
@@ -11,6 +11,4 @@
 Also showcasing:
 * Different RigidBody physics
 * Animation states for interactable objects
-
-[screenshot]: https://github.com/TheRadMatt/3D-FPP-Interaction-Demo/blob/master/screenshot.PNG "Interaction-Demo in Editor"
-[Godot 3.x]: https://godotengine.org/
+![Screenshot of the room scene](screenshot.PNG)
